@@ -21,5 +21,5 @@ variable "ssh_private_key" {
 }
 variable "ssh_public_key" {
   type    = string
-  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKso5ZmRQfDDNpzT/L7F8nKUfvearQBTZ8faX3ejz/5r jenkins@ip-172-31-0-156"
+  default = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKso5ZmRQfDDNpzT/L7F8nKUfvearQBTZ8faX3ejz/5r"
 }
