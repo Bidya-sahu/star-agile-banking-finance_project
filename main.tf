@@ -16,6 +16,23 @@ resource "aws_key_pair" "example" {
   key_name = "key02"
   public_key = file("~/.ssh/id_ed25519.pub")
 }
+resource "aws_security_group" "allow_all" {
+  name_prefix = "allow_all"
+
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"  # This allows all protocols (TCP, UDP, ICMP)
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"  # This allows all protocols (TCP, UDP, ICMP)
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
 
 resource "aws_instance" "server" {
   ami           = "ami-0522ab6e1ddcc7055"
